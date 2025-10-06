@@ -15,7 +15,7 @@ First and foremost, I will never share your email address or any other personal 
 
 ### Log Files
 
-Like many other websites, this site uses log files to help learn about when, from where, and how often traffic flows to this site. The information in these log files include:
+Like many other websites, this site may use log files to help learn about when, from where, and how often traffic flows to this site. The information in these log files include:
 
 * Internet Protocol addresses (IP)
 * Types of browser
@@ -36,4 +36,4 @@ If you wish to disable cookies, you may do so through your web browser options. 
 
 #### Google Analytics
 
-Google Analytics is a web analytics tool I use to help understand how visitors engage with this website. It reports website trends using cookies and web beacons without identifying individual visitors. You can read [Google Analytics Privacy Policy](http://www.google.com/analytics/learn/privacy.html).
+Google Analytics is a web analytics tool I may use to help understand how visitors engage with this website. It reports website trends using cookies and web beacons without identifying individual visitors. You can read [Google Analytics Privacy Policy](http://www.google.com/analytics/learn/privacy.html).
