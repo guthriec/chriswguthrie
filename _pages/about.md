@@ -27,6 +27,6 @@ One question I'm currently thinking about: How suboptimal is it to model the wor
 
 ### Practical Techniques
 
-- Online fine-tuning of classical and deep models
+- Online fine-tuning of deep models
 - "Networks of agents" for heterogeneous systems and decentralized decision-making
 - LLMs as foundation models, embedding models, and otherwise "components" of decision-making systems
