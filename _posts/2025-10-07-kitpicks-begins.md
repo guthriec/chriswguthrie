@@ -1,7 +1,11 @@
 ---
 layout: single
+date: 2025-10-07
 title:  "Kitpicks Begins!"
+permalink: /hack-blog/kitpicks-begins/
 category: hack-blog
+tags:
+  - hack-blog
 ---
 After 5 1/2 years of working at Google, I decided to take a [buyout](https://www.cnbc.com/2025/06/10/google-buyouts-search-ads-unit.html) to pursue full-time graduate school.
 
