@@ -23,8 +23,8 @@ main:
   - title: "Scholarly Blog"
     url: /blog/
   
-  - title: "Engineering Blog"
-    url: /eng-blog/
+  - title: "Hacker-ly Blog"
+    url: /hack-blog/
 
   # - title: "CV"
   #   url: /cv/

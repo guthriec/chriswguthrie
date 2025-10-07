@@ -23,10 +23,9 @@ In general, I'm interested in algorithms which enable computational agents (robo
 - Bandits and exploration algorithms
 - Search/planning algorithms in games and decision processes
 
-One question I'm currently thinking about: When is it suboptimal to model the world as adversarial when it's actually stochastic/i.i.d.? When do ML practitioners have a good reason *not* to adopt a "regret minimization" approach?
+One question I'm currently thinking about: When is it suboptimal to model the world as adversarial when it's actually stochastic/i.i.d.? When does one have a good reason *not* to adopt a "regret minimization" approach?
 
 ### Practical Techniques
 
 - "Networks of agents" for heterogeneous systems and decentralized decision-making
 - LLMs as foundation models, embedding models, and otherwise "components" of decision-making systems
-- RL for challenge problems (e.g. Minecraft)
