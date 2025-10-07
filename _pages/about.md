@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-👋 My name is Chris Guthrie. I'm currently pursuing a research-based Computer Science Master's at the University of Colorado in Boulder (my hometown!). I'm also developing a privacy-first RSS recommendation feed called Kitpicks -- link coming soon!
+👋 My name is Chris Guthrie. I'm currently pursuing a research-based Computer Science Master's at the University of Colorado in Boulder (my hometown!). I'm also developing a privacy-first RSS discovery feed called [Kitpicks](/hack-blog/kitpicks-begins)!
 
 ## CV in Brief
 
