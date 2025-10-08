@@ -33,7 +33,7 @@ I want to take a different tack with this project. I'll try to resist some of my
 
 - standard tooling
 - only one language (Typescript)
-- "bi-lithic" architecture (kind of like monolithic... there should be 2 Node.js applications: one Electron client, and one cloud server to host the client binary and handle feedback/crash reports/error logs)
+- "bi-lithic" architecture (kind of like monolithic... there should be 2 Node.js applications: one Electron client, and one cloud server to handle feedback/crash reports/error logs)
 - use Github Actions for all devops automation; no funky self-hosting
 - rapid prototyping for UI development; use Github Copilot for this
 
