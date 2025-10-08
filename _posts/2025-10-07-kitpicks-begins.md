@@ -9,7 +9,7 @@ After 5 1/2 years of working at Google, I decided to take a [buyout](https://www
 
 And school is great! But "building useful things" is a muscle that can atrophy. I want to be sure that I maintain some practice of product development while I also test my limits academically.
 
-So, I'm publicly committing myself to delivering a side project. I've worked on a lot of side projects in the past, but always stopped short of shipping or publicizing them. Usually, this is because I come to realize that what I've built is hard to explain and/or of dubious market value. In some cases, projects were more a vehicle for technical experimentation than anything else. My goal this time around is to build an app which provides some clear market value, even if it's niche and has a low ceiling in terms of [TAM](https://en.wikipedia.org/wiki/Total_addressable_market).
+So, I'm publicly committing myself to delivering a side project. I've worked on a lot of side projects in the past, but always stopped short of shipping or publicizing them. Usually, this is because I come to realize that what I've built is hard to explain and/or of dubious market value. In some cases, projects were more a vehicle for technical experimentation than anything else. My goal this time around is to build an app which provides some clear market value, even if it's niche and has a low ceiling in terms of [TAM](https://en.wikipedia.org/wiki/Total_addressable_market). At least I'll use it!
 
 ## What will Kitpicks be?
 

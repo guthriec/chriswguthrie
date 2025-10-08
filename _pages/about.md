@@ -15,7 +15,7 @@ Stanford Undergrad > Travel > App Development Projects (Mobile and Web) > Google
 
 ## Research Interests
 
-In general, I'm interested in algorithms which enable computational agents (robots, drones, AI assistants...) to continually learn, adapt, and pursue pro-social goals in "big worlds."
+In general, I'm interested in algorithms which enable computational agents (robots, drones, AI assistants...) to continually learn, adapt, and pursue pro-social goals in "big worlds" which cannot be fully modeled by the agent.
 
 ### Theory
 
@@ -28,4 +28,4 @@ One question I'm currently thinking about: When is it suboptimal to model the wo
 ### Practical Techniques
 
 - "Networks of agents" for heterogeneous systems and decentralized decision-making
-- LLMs as foundation models, embedding models, and otherwise "components" of decision-making systems
+- Models, pretrained with self-supervision, as precursors to decision-making systems (e.g. using LLMs as foundation or embedding models)
