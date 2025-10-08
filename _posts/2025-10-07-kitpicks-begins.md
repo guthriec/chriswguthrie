@@ -35,9 +35,10 @@ I want to take a different tack with this project. I'll try to resist some of my
 - only one language (Typescript)
 - "bi-lithic" architecture (kind of like monolithic... there should be 2 Node.js applications: one Electron client, and one cloud server to handle feedback/crash reports/error logs)
 - use Github Actions for all devops automation; no funky self-hosting
+- pay for Vercel/Railway instead of hosting web services
 - rapid prototyping for UI development; use Github Copilot for this
 
-For all my aversion to interpreted languages and my hesitancy to send money to Github, I'm kind of excited about this approach. I think it will be particularly interesting to implement the recommender system math in Typescript. I'm also excited to prove to myself that it's feasible to use modern AI techniques (particularly LLM embeddings) in client application software.
+For all my aversion to interpreted languages and my hesitancy to send money to Github et al., I'm kind of excited about this approach. I think it will be particularly interesting to implement the recommender system math in Typescript. I'm also excited to prove to myself that it's feasible to use modern AI techniques (particularly LLM embeddings) in client application software.
 
 ## What's next?
 
