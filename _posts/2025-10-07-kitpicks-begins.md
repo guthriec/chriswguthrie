@@ -29,7 +29,7 @@ If I can consistently get one download per day, I'll be happy. That will be when
 
 In my work (both side-project work and paid work), I've had a tendency to over-engineer and prematurely generalize things. I'm always trying to make things hyper-portable, anticipating all sorts of future use cases, etc.
 
-I want to take a different tack with this project. I'll try to resist some of my delicate SWE sensibilities and focus on getting things done fast. This means:
+I want to take a different tack with this project. I'll try to overcome some of my delicate SWE sensibilities and focus on getting things done fast. This means:
 
 - standard tooling
 - only one language (Typescript)
