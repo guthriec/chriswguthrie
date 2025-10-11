@@ -1,0 +1,55 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Branch -->
+  <path d="M 140 60 Q 120 65 100 68" stroke="#8B7355" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 120 65 Q 115 58 112 50" stroke="#8B7355" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Leaves -->
+  <ellipse cx="115" cy="45" rx="4" ry="7" fill="#6B8E23" transform="rotate(-20 115 45)"/>
+  <ellipse cx="110" cy="48" rx="4" ry="7" fill="#6B8E23" transform="rotate(15 110 48)"/>
+  
+  <!-- Berry -->
+  <circle cx="100" cy="68" r="5" fill="#DC143C"/>
+  <circle cx="100" cy="66" r="1.5" fill="#FFB6C1" opacity="0.6"/>
+  
+  <!-- Raccoon body -->
+  <ellipse cx="70" cy="120" rx="25" ry="30" fill="#696969"/>
+  
+  <!-- Raccoon head -->
+  <circle cx="75" cy="95" r="18" fill="#696969"/>
+  
+  <!-- Raccoon ears -->
+  <ellipse cx="68" cy="82" rx="6" ry="8" fill="#696969"/>
+  <ellipse cx="82" cy="82" rx="6" ry="8" fill="#696969"/>
+  <ellipse cx="68" cy="83" rx="3" ry="5" fill="#505050"/>
+  <ellipse cx="82" cy="83" rx="3" ry="5" fill="#505050"/>
+  
+  <!-- Raccoon snout area (lighter) -->
+  <ellipse cx="82" cy="98" rx="8" ry="7" fill="#D3D3D3"/>
+  
+  <!-- Raccoon mask (black patches) -->
+  <ellipse cx="70" cy="92" rx="5" ry="4" fill="#000000"/>
+  <ellipse cx="80" cy="92" rx="5" ry="4" fill="#000000"/>
+  
+  <!-- Eyes (white dots in mask) -->
+  <circle cx="70" cy="92" r="2" fill="#FFFFFF"/>
+  <circle cx="80" cy="92" r="2" fill="#FFFFFF"/>
+  <circle cx="71" cy="92" r="1" fill="#000000"/>
+  <circle cx="81" cy="92" r="1" fill="#000000"/>
+  
+  <!-- Nose -->
+  <ellipse cx="82" cy="100" rx="2" ry="1.5" fill="#000000"/>
+  
+  <!-- Raccoon tail (with rings) -->
+  <path d="M 50 125 Q 35 130 28 145" stroke="#696969" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <path d="M 48 128 Q 36 132 30 142" stroke="#000000" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 42 135 Q 35 138 32 145" stroke="#000000" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Raccoon arm reaching for berry -->
+  <path d="M 82 110 Q 90 95 95 75" stroke="#696969" stroke-width="5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Paw reaching -->
+  <ellipse cx="97" cy="72" rx="4" ry="5" fill="#696969" transform="rotate(-30 97 72)"/>
+  <line x1="96" y1="70" x2="99" y2="68" stroke="#505050" stroke-width="1" stroke-linecap="round"/>
+  <line x1="97" y1="70" x2="100" y2="69" stroke="#505050" stroke-width="1" stroke-linecap="round"/>
+  <line x1="98" y1="71" x2="101" y2="71" stroke="#505050" stroke-width="1" stroke-linecap="round"/>
+</svg>
