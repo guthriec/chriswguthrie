@@ -6,7 +6,7 @@ permalink: /hack-blog/page-landed/
 category: hack-blog
 ---
 
-[kitpicks.com](kitpicks.com) is up and running!
+[kitpicks.com](https://kitpicks.com) is up and running!
 
 It's not much to look at yet. It's just a landing page. I set it up as an Astro site on Vercel, which might be overkill, but the setup was super super easy.
 
