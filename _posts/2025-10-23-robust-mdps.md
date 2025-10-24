@@ -5,7 +5,7 @@ permalink: /blog/robust-mdps/
 category: research
 ---
 
-*This post was written as an assignment for ASEN 6519, the Advanced Survey of Sequential Decision Making class, at CU Boulder. AI was used to help with research for this post.*
+*This post was written as an assignment for ASEN 6519, the Advanced Survey of Sequential Decision Making class, at CU Boulder. AI was used to help with research for this post and perform a grammar/tone check.*
 
 ## A Motivating Example From Class: Robot Soccer
 
@@ -32,9 +32,9 @@ So I wonder whether the sim-to-real problem *was* fundamentally solved in the ro
 
 Addressing problems of fragility and environment shifts falls under the broad category of "robust reinforcement learning (RL)." To go up one level of abstraction, robustness may aim to address fragility arising from:
 
-1. **Model misspecification**. Developers of AI systems often don't correctly model the world. Maybe they base their robot on an explicit physics model that makes simplifying assumptions. Even in highly flexible models which are meant to be learned, developers assume that experiences from the world (transitions and rewards) are i.i.d., and that the distribution from which these experiences are drawn is stationary over time. In sim-to-real transfer, it is this second assumption that is almost always violated, since there is a distribution shift when the system is deployed in the real world.
-1. **Epistemic uncertainty**. Even when we've correctly chosen the *class* of model for the world (or at least, correctly enough), when we're trying to do reinforcement learning, we need to estimate the parameters of that model. Since we are basing our estimates on data, our estimates will have some error. A system which is robust to epistemic uncertainty will exhibit a kind of pessimism under this uncertainty. Notice though, we've changed the game a little -- whereas typically in RL, we're aiming to maximize expected discounted reward, when we factor in robustness, it's because we're asymmetrically averse to "unpleasant surprises". This is what's typically called "Safe RL". Approaches to mitigate model misspecification often can also be applied to mitigate epistemic uncertainty and make RL safer.
-1. **Aleatoric uncertainty**. Once we're in the land of "Safe RL", and we've decided that we're asymmetrically risk-averse, there's no reason to stop at epistemic uncertainty. Robustness can also encompass a preference for avoiding known risks by taking actions which have only a narrow range of possible outcomes, all of which are acceptable.
+1. **Model misspecification**. Developers of AI systems often don't correctly model the world. Maybe they base their robot on an explicit physics model that makes simplifying assumptions. Even in highly flexible learnable models, developers assume that experiences from the world (transitions and rewards) are i.i.d., and that the distribution from which these experiences are drawn is stationary over time. In sim-to-real transfer, it is this second assumption that is almost always violated, since there is a distribution shift when the system is deployed in the real world.
+1. **Epistemic uncertainty**. Even when we've correctly chosen the *class* of model for the world (or at least, correctly enough), when we're trying to do reinforcement learning, we need to estimate the parameters of that model. Since we are basing our estimates on data, our estimates will have some error. A system which is robust to epistemic uncertainty will exhibit a kind of pessimism under this uncertainty. Notice though, we've changed the game a little -- whereas typically in RL, we're aiming to maximize expected discounted reward, when we factor in robustness, it's because we're asymmetrically averse to "unpleasant surprises". This is what's typically called "Safe RL." Approaches to mitigate model misspecification often can also be applied to mitigate epistemic uncertainty and make RL safer.
+1. **Aleatoric uncertainty**. Once we're in the land of "Safe RL," and we've decided that we're asymmetrically risk-averse, there's no reason to stop at epistemic uncertainty. Robustness can also encompass a preference for avoiding known risks by taking actions which have only a narrow range of possible outcomes, all of which are acceptable.
 
 So, robustness can refer to strategies for managing almost every kind of uncertainty we have in automated decision-making. The unifying characteristic of robustness is a focus on limiting the damage from worst-case, or nearly worst-case, scenarios. In short: paranoia!
 
@@ -48,7 +48,7 @@ If RL begins with the Markov Decision Process (MDP), robust RL begins with the..
 
 [^rmdp]: Suilen, M., Badings, T., Bovy, E. M., Parker, D., & Jansen, N. (2024). Robust markov decision processes: A place where AI and formal methods meet. In Principles of Verification: Cycling the Probabilistic Landscape: Essays Dedicated to Joost-Pieter Katoen on the Occasion of His 60th Birthday, Part III (pp. 126-154). Cham: Springer Nature Switzerland.
 
-We recall that an MDP is defined by a tuple $$(S, A, T, R, \gamma)$$, where $$S$$ is the set of states, $$A$$ is the set of actions, $$T: S \times A \to \Delta(S)$$ encodes stochastic transitions and $$R: S \times A \to \mathbb{R}$$ encodes deterministic rewards. Note $$R$$ is frequently bounded on one or both sides.
+We recall that an MDP is defined by a tuple $$(S, A, T, R, \gamma)$$, where $$S$$ is the set of states, $$A$$ is the set of actions, $$T: S \times A \to \Delta(S)$$ encodes stochastic transitions and $$R: S \times A \to \mathbb{R}$$ encodes deterministic rewards. Note that $$R$$ is frequently bounded on one or both sides.
 
 A **robust MDP** is defined similarly by a tuple $$(S, A, \mathcal{T}, R, \gamma)$$. The difference is that instead of a single transition function $$T$$, you have a map $$\mathcal{T}: \mathcal{U} \to (S \times A \to \Delta(S))$$ to represent our uncertainty about what the transitions might be.
 
@@ -102,7 +102,7 @@ Because this setting is a "2P0S" game, it doesn't require advanced game theoreti
 
 ## Learning Robustly
 
-Ok! So we have a formalism for worst-case thinking. But this post didn't just promise to talk about robust planning -- it started by talking about learning! When it comes to robust learning, there are a lot of very different approaches. Some of them are based on the RMDP formalism, while some of them are more just practical techniques for robust learning. But I will try to touch on most of the major approaches to robust RL. As my reference, I'm using a recent survey of Robust RL.[^survey]
+Ok! So we have a formalism for worst-case thinking. But this post didn't just promise to talk about robust planning -- it started by talking about learning! When it comes to robust learning, there are a lot of very different approaches. Some of them are based on the RMDP formalism, while some of them are more just practical techniques for robust learning. I will try to touch on most of the major approaches to robust RL. As my reference, I'm using a recent survey of Robust RL.[^survey]
 
 [^survey]: Moos, J., Hansel, K., Abdulsamad, H., Stark, S., Clever, D., & Peters, J. (2022). Robust reinforcement learning: A review of foundations and recent advances. Machine Learning and Knowledge Extraction, 4(1), 276-315.
 
@@ -115,7 +115,7 @@ Uncertainty estimation can use confidence intervals from concentration bounds li
 Beyond the frequentist confidence interval, there seems to be a wide variety of approaches to learning uncertainty sets:
 
 - Some research takes a Bayesian approach to learning RMDPs. In particular Derman et al. 2020[^bayes] propose a Bayesian DQN algorithm (along with some theoretical analysis) which promises both robustness and adaptiveness to non-stationary dynamics. This adaptiveness is especially interesting, since it helps potentially alleviate the "overly conservative" tendencies of robust RL.
-- "Distributionally robust RL" takes a slightly different tack. Rather than identifying uncertainty sets as confidence intervals, distributional approaches build an uncertainty set based on a "ball" of probability distributions, e.g. by using KL divergence regions around the optimal policy from each state.[^drrl] **Beware**: it seems that there is a lot of fuzziness in the literature around "robust RL", "distributionally robust RL", "distributional RL"... and that the boundaries between these approaches is not super well defined.
+- "Distributionally robust RL" takes a slightly different tack. Rather than identifying uncertainty sets as confidence intervals, distributional approaches build an uncertainty set based on a "ball" of probability distributions, e.g. by using KL divergence regions around the optimal policy from each state.[^drrl] **Beware**: it seems that there is a lot of fuzziness in the literature around "robust RL", "distributionally robust RL", "distributional RL"... and that the boundaries between these approaches are not super well defined.
 
 [^bayes]: Derman, E., Mankowitz, D., Mann, T., & Mannor, S. (2020, August). A bayesian approach to robust reinforcement learning. In Uncertainty in Artificial Intelligence (pp. 648-658). PMLR.
 
@@ -125,13 +125,13 @@ Beyond the frequentist confidence interval, there seems to be a wide variety of 
 
 ### Risk-Sensitive RL
 
-Similar to robust learning (but not taking a hard worst-case view of the problem) is risk-sensitive RL, which uses explicitly risk-averse transformations of the reward, for example CVaR[^cvar], to train risk-averse policies and avoid catastrophic outcomes.
+Similar to robust learning (but not taking a hard worst-case view of the problem) is risk-sensitive RL, which uses explicitly risk-averse transformations of the reward, for example, CVaR[^cvar], to train risk-averse policies and avoid catastrophic outcomes.
 
 [^cvar]: Hiraoka, T., Imagawa, T., Mori, T., Onishi, T., & Tsuruoka, Y. (2019). Learning robust options by conditional value at risk optimization. Advances in Neural Information Processing Systems, 32.
 
 ### Conservative Q-Learning
 
-One successful approach, called conservative Q-Learning[^cql], regularizes Q function approximation to underestimate Q values out-of-distribution, effectively biasing assumptions towards the worst-case and "robustifying" the resulting policy.
+One successful approach, called conservative Q-learning[^cql], regularizes Q function approximation to underestimate Q values out-of-distribution, effectively biasing assumptions towards the worst-case and "robustifying" the resulting policy.
 
 [^cql]: Kumar, A., Zhou, A., Tucker, G., & Levine, S. (2020). Conservative q-learning for offline reinforcement learning. Advances in neural information processing systems, 33, 1179-1191.
 
