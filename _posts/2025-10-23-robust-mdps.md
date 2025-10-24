@@ -156,6 +156,6 @@ I'll finish this post with a mention of one very cool area in the realm of robus
 
 In essence, Hazan proposes taking an approach which uses ideas from adversarial online learning to minimize regret instead of maximize rewards. This approach, in my understanding, embraces the idea that Nature is playing a game, but does not assume that this game is zero-sum. Instead, it attempts to learn Nature's game and play optimally against it, whether Nature is thwarting the agent, or helping it.
 
-Hazan's book mentions RL but seems mostly focused on classical control. Extending some of his ideas to the full RL setting sounds very interesting. Perhaps it could help us make our androids a little less paranoid, while still remaning safely deployed.
+Hazan's book mentions RL but seems mostly focused on classical control. Extending some of his ideas to the full RL setting sounds very interesting. Perhaps it could help us make our androids a little less paranoid, while still remaning... safely deployed.
 
 [^hazan]: Hazan, E., & Singh, K. (2022). Introduction to online nonstochastic control. arXiv preprint arXiv:2211.09619.
