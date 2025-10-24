@@ -102,7 +102,7 @@ Because this setting is a "2P0S" game, it doesn't require advanced game theoreti
 
 ## Learning Robustly
 
-Ok! So we have a formalism for worst-case thinking. But this post didn't just promise to talk about robust planning -- it started by talking about learning! When it comes to robust learning, there are a lot of very different approaches. Some of them are based on the RMDP formalism, while some of them are more just practical techniques for robust learning. I will try to touch on most of the major approaches to robust RL. As my reference, I'm using a recent survey of Robust RL.[^survey]
+Ok! So we have a formalism for worst-case thinking. But this post didn't just promise to talk about robust planning -- it started by talking about learning! When it comes to robust learning, there are a lot of very different approaches. I'll try to touch on the major ones. Some are based on the RMDP formalism, while some of them are more just practical techniques for robust learning. As my main reference, I'm using a recent survey of robust RL.[^survey]
 
 [^survey]: Moos, J., Hansel, K., Abdulsamad, H., Stark, S., Clever, D., & Peters, J. (2022). Robust reinforcement learning: A review of foundations and recent advances. Machine Learning and Knowledge Extraction, 4(1), 276-315.
 
@@ -120,8 +120,6 @@ Beyond the frequentist confidence interval, there seems to be a wide variety of 
 [^bayes]: Derman, E., Mankowitz, D., Mann, T., & Mannor, S. (2020, August). A bayesian approach to robust reinforcement learning. In Uncertainty in Artificial Intelligence (pp. 648-658). PMLR.
 
 [^drrl]: Smirnova, E., Dohmatob, E., & Mary, J. (2019). Distributionally robust reinforcement learning. arXiv preprint arXiv:1902.08708.
-
-## Related Concepts
 
 ### Risk-Sensitive RL
 
@@ -144,7 +142,7 @@ Perhaps motivated by the conception of robustness as a game between the agent an
 
 ## A Relatively Open Area: Exploration
 
-Some recent work[^idc] suggests that exploration has not really been considered in robust RL. I'm not sure that's entirely fair -- I did notice that Smirnova et al. discussed how entropy regularization could encourage exploration under their KL-based scheme. However, I do wonder whether there may yet be a lot of ideas to explore around exploration with robustness. 
+Some recent work[^idc] suggests that exploration has not really been considered in robust RL. I'm not sure that's entirely fair -- I did notice that Smirnova et al. discussed how entropy regularization could encourage exploration under their KL-based scheme. However, I do wonder whether there may yet be a lot of ideas to explore around exploration with robustness.
 
 One simple idea I was able to generate in this area (so no guarantee that it's any good!), is to model your uncertainty sets as literally the entire range of the data you've seen so far from a given state-action pair (maybe with some interpolation in the continuous case). From there, if you plan for worst-case results under those uncertainty sets, you will naturally explore, since lesser-explored states are less likely to have experienced an unusually bad event.
 
@@ -152,9 +150,9 @@ One simple idea I was able to generate in this area (so no guarantee that it's a
 
 ## Between Robustness and Optimality
 
-I'll finish this post with a mention of one very cool area in the realm of robust RL/robust control, which aims to help address the over-conservatism of many robust approaches. This is an area called "non-stochastic control," which was initially developed in a flurry of activity within a small community around 2020, but has perhaps died down a bit. One of the original instigators of this idea, Elad Hazan, seems to still be working on a book about the idea[^hazan].
+I'll finish this post with a mention of one very cool area in the realm of robust RL/robust control, which aims to help address the over-conservatism of many robust approaches. It's called "non-stochastic control." It was initially developed in a flurry of activity within a small community around 2020, but has perhaps died down a bit. One of the original instigators of this idea, Elad Hazan, seems to still be working on a book about it[^hazan].
 
-In essence, Hazan proposes taking an approach which uses ideas from adversarial online learning to minimize regret instead of maximize rewards. This approach, in my understanding, embraces the idea that Nature is playing a game, but does not assume that this game is zero-sum. Instead, it attempts to learn Nature's game and play optimally against it, whether Nature is thwarting the agent, or helping it.
+In essence, Hazan proposes taking an approach which uses ideas from adversarial online learning to minimize regret instead of maximize rewards. This approach, in my understanding, embraces the idea that Nature is playing a game, but does not assume that this game is known beforehand or is zero-sum. Instead, it attempts to learn Nature's game and play optimally against it, whether Nature is thwarting the agent, or helping it.
 
 Hazan's book mentions RL but seems mostly focused on classical control. Extending some of his ideas to the full RL setting sounds very interesting. Perhaps it could help us make our androids a little less paranoid, while still remaning... safely deployed.
 
