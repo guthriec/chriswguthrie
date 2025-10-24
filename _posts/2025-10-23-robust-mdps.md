@@ -13,7 +13,7 @@ It's no longer a surprise when we learn that AI agents can accomplish superhuman
 
 In many tasks of real-world interest though, this training data doesn't exist, and self-supervision isn't sufficient. Maybe you have some camera data from driver behavior on the road, but it won't exactly match the camera position of your self-driving car. Maybe you can simulate your robot, but there will be some dynamics which your simulator has failed to model in the real world.
 
-It's especially this second problem, called sim-to-real transfer, which I want to focus in on. In one recent triumph (Haarnoja et al. 2024)[^socc], a Google DeepMind team trained robots to play soccer in a simulator, and then transferred the simulated policies directly to real robotic hardware, withotu additional training:
+It's especially this second problem, called sim-to-real transfer, which I want to focus in on. In one recent triumph (Haarnoja et al. 2024)[^socc], a Google DeepMind team trained robots to play soccer in a simulator, and then transferred the simulated policies directly to real robotic hardware, without additional training:
 
 [^socc]: Haarnoja, T., Moran, B., Lever, G., Huang, S. H., Tirumala, D., Humplik, J., ... & Heess, N. (2024). Learning agile soccer skills for a bipedal robot with deep reinforcement learning. Science Robotics, 9(89), eadi8022.
 
