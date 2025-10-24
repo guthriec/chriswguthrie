@@ -11,7 +11,7 @@ category: research
 
 It's no longer a surprise when we learn that AI agents can accomplish superhuman intellectual feats. The emergence of powerful chatbots with deep implicit knowledge bases and impressive abstract reasoning capabilities has helped rocket NVIDIA to a market cap of over $4 trillion. It's fairly widely accepted that the models underlying these agents are basically next-token prediction machines. The key to their success is that the next-token prediction task has nearly unlimited training data available, in a form which exactly matches the task at hand (since all you need is just human-generated text).
 
-In many tasks of real-world interest though, this training data doesn't exist, and self-supervision isn't sufficient. Maybe you have some camera data from driver behavior on the road, but it won't exactly match the camera position of your self-driving car. Maybe you can simulate your robot, but there will be some dynamics which your simulator has failed to model in the real world.
+In many tasks of real-world interest though, this training data doesn't exist, and self-supervision isn't sufficient. Maybe you have some camera data from driver behavior on the road, but it won't exactly match the camera position of your self-driving car. Maybe you can simulate your robot, but there will be some real-world dynamics which your simulator has failed to model.
 
 It's especially this second problem, called sim-to-real transfer, which I want to focus in on. In one recent triumph (Haarnoja et al. 2024)[^socc], a Google DeepMind team trained robots to play soccer in a simulator, and then transferred the simulated policies directly to real robotic hardware, without additional training:
 
