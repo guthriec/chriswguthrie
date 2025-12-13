@@ -1,6 +1,6 @@
 ---
 title: "Confidence via Capital Growth"
-date: 2025-12-11
+date: 2025-12-13
 permalink: /blog/confidence-and-capital/
 category: research
 ---
