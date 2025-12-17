@@ -29,12 +29,17 @@ He seems pretty willing to [entirely throw out policy gradient methods](https://
 > 1. Build a model of the environment using standard predictive tools.
 > 1. Optimize as if the model were true.
 
-My initial reaction to this idea is that this might work for small action spaces, but when the agent has enough choices and the environment has enough inherent complexity (so small changes in the agent's choices can have big impacts on the environment), then the direct optimization problem likely will just take too long.
+I have a few responses to this idea.
+
+First, optimizing over models of the environment might work for small action spaces, but when the agent has enough choices and the environment has enough inherent complexity (so small changes in the agent's choices can have big impacts on the environment), then the direct optimization problem likely will just take too long, and the agent won't be able to make decisions fast enough. Policy gradient with neural network approximations can enable agents to make good reactive decisions that are approximately optimal.
+
+Second, developments like Dreamer, in which policy gradient agents train themselves against a learned world model, promise to resolve some of Recht's concerns. Who cares if policy gradient is sample-inefficient, if an agent can be continually trained on an infinite supply of unbiased samples.
 
 I also think Recht's emphasis on certainty equivalence ignores one of the primary motivations for RL, namely, reward-directed exploration.
 An agent should have some principled way of accounting for the information value of its actions, which shouldn't just be bolted onto a classical control approach.
 That said, even in modern policy gradient algorithms, exploration sometimes feels like an afterthought...
 
-Ultimately, even if Recht's point of view is too radical or too dismissive of policy gradient, the RL community has very much opened itself up to this kind of criticism by promising general-purpose control algorithms and instead mostly delivering game-playing bots which usually take weeks (on large and expensive clusters) to train, and orders of magnitude longer to develop.
-At some level, Recht is right -- there must be a better way. What's less clear to me is whether this better way involves finding more adaptive policy gradient approaches which can regulate their own hyperparameters during training without manual tuning, or whether (as Recht suggests) this better way means replacing policy gradient with classical planning over uncertain "world models."
+Ultimately, even if Recht's point of view is too radical or too dismissive of policy gradient, the RL community has very much opened itself up to this kind of criticism by promising general-purpose control algorithms and instead mostly delivering game-playing bots which usually take weeks (on large and expensive clusters) to train, and an order of magnitude longer to develop.
+At some level, Recht is right -- there must be a better way.
+What's less clear to me is whether this better way involves finding more adaptive policy gradient approaches which can regulate their own hyperparameters during training without manual tuning, or whether (as Recht suggests) this better way means replacing policy gradient with classical planning, over environment models. 
 I must admit though, after wrestling for days with an uncooperative actor-critic algorithm on a task that seemed like it "should be" easy, I might be leaning towards Recht's view.
