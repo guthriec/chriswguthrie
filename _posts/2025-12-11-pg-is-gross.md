@@ -41,5 +41,5 @@ That said, even in modern policy gradient algorithms, exploration sometimes feel
 
 Ultimately, even if Recht's point of view is too radical or too dismissive of policy gradient, the RL community has very much opened itself up to this kind of criticism by promising general-purpose control algorithms and instead mostly delivering game-playing bots which usually take weeks (on large and expensive clusters) to train, and an order of magnitude longer to develop.
 At some level, Recht is right -- there must be a better way.
-What's less clear to me is whether this better way involves finding more adaptive policy gradient approaches which can regulate their own hyperparameters during training without manual tuning, or whether (as Recht suggests) this better way means replacing policy gradient with classical planning, over environment models. 
+What's less clear to me is whether this better way involves finding more adaptive policy gradient approaches which can regulate their own hyperparameters during training without manual tuning, or whether (as Recht suggests) this better way means replacing policy gradient with classical planning, over environment models.
 I must admit though, after wrestling for days with an uncooperative actor-critic algorithm on a task that seemed like it "should be" easy, I might be leaning towards Recht's view.
