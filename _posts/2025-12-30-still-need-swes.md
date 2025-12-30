@@ -8,24 +8,28 @@ category: hack-blog
 
 I've gone back to [Kitpicks](https://kitpicks.com) work over winter break.
 
-The app is quasi-functional in that it will allow users to actually add RSS feeds and will fetch those feeds. But with the introduction of more complex logic, the app is starting to pick up a slight aroma of "legacy code." I found myself playing whack-a-mole with regressions and having to follow around some spaghetti strands when debugging issues.
+The app is quasi-functional in that it will allow users to actually add RSS feeds and will fetch and display those feeds. There's functionality for categorizing feeds and refreshing whole categories. "Visit Later" and rating buttons are working. But with the introduction of more complex logic, the app is starting to pick up a slight aroma of "legacy code." I found myself playing whack-a-mole with regressions and having to follow around some spaghetti strands when debugging issues.
 
-So, in the past few days, I've started getting a feel for real software engineering with AI, not just vibe-coding a user interface.
+So, in the past few days, I've started getting a feel for real software engineering with AI, not just vibe-coding a user interface. I've added tests, written up some design sketches for components of the app, and done some refactoring work.
 
-In these tasks, I've found Copilot to be sometimes magical and sometimes insanely frustrating. By far the biggest frustration is Copilot's tendency to get tests passing by weakening the assertions.
+In these tasks, I've found Copilot to be sometimes magical and sometimes insanely frustrating. Copilot often confidently proceeds in a direction which is almost completely opposite the request. It finds ways to refactor code which make it *harder* to follow. It gets stuck in endless debugging loops of: "The issue is... Actually... Aha! The issue is... Actually... Bingo! I found the issue!... Actually..." (Maybe one day AI will learn to have thoughts with words like "maybe", "I think", "I'm not sure"...). And by far my biggest frustration is Copilot's tendency to get tests passing by weakening the assertions and then declaring job well done.
 
-I feel like I've seen a lot of takes in the past day or two expressing nearly the full spectrum of attitudes towards AI-assisted engineering[^1].
+It seems I'm not alone in trying to figure out how to make AI effective beyond simple prototypes. In the past day or two, I've seen Internet takes expressing nearly the full spectrum of attitudes towards AI-assisted engineering[^1].
 
-On the front page of Hacker News alone, at this moment, there's a [blog post](https://news.ycombinator.com/item?id=46424233) which argues that AI is doomed because it can't really "think", and [another](https://news.ycombinator.com/item?id=46424200) which fully embraces AI but argues that traditional software engineering practices make it so you can run AI with almost no supervision. A couple days ago I saw on HN a [post](https://rishi.monster/posts/time-intelligence-economy-part-1-the-ai-noise/) which argued for the inevitability of slop and lack of rigor, and that we must "romanticize" this. Today, my Google Discover feed recommended me [a post summarizing an interview](https://thenewstack.io/martin-fowler-on-preparing-for-ais-nondeterministic-computing/) with Martin Fowler, which takes the middle ground and argues that AI is highly useful for both analyzing and generating code but can't be let loose unsupervised.
+On the front page of Hacker News alone, at the time of writing, there's a [blog post](https://news.ycombinator.com/item?id=46424233) which argues that AI should be used very sparingly because it can't really "think", and [another](https://news.ycombinator.com/item?id=46424200) which fully embraces AI but argues that traditional software engineering practices make it so you can run AI with almost no supervision. A couple days ago I saw on HN a [post](https://rishi.monster/posts/time-intelligence-economy-part-1-the-ai-noise/) which argued for the inevitability of slop and lack of rigor, and that we must "romanticize" this (I vehemently disagree with this take, fwiw). Today, my Google Discover feed recommended me [a post summarizing an interview](https://thenewstack.io/martin-fowler-on-preparing-for-ais-nondeterministic-computing/) with Martin Fowler, which takes the middle ground and argues that AI is highly useful for both analyzing and generating code but can't be let loose unsupervised.
 
-I'm not sure I have much to add to all this discourse, other than to throw a +1 in the direction of Mr. Fowler based on my experiences so far. AI does all kinds of crazy random stuff that absolutely degrades the codebase and causes regressions. Agent instructions help, but only a little bit. I've found that even the most strongly worded instructions are often ignored.
+I'm not sure I have much to add to all this discourse, other than to throw a +1 in the direction of Mr. Fowler based on my experiences so far. AI does all kinds of crazy random stuff that absolutely degrades the codebase and causes regressions. It's not that the code is just ugly or whatever; it's not some prissy aesthetic thing. AI makes code simply unmanageable, to the point that AI can't resolve bugs arising from the mess it's created.
 
-If LLMs are meant to replace engineers, they are replacing the most frustrating and flaky engineers you've ever worked with, who produce enough good code to somehow stay employed despite seeming to have zero common sense or teamwork skills.
+If LLMs are meant to replace engineers, they are replacing the most flaky and BS-filled engineers you've ever worked with, who produce enough working code to somehow stay employed despite seeming to have zero common sense, teamwork skills, consideration for the future, or basic norms around honesty.
 
-But still, for most tasks, I think it saves time to give Copilot one or two attempts to solve a problem before stepping in and doing it manually. I have a nearly fully-featured app up and running:
+So human beings still need to be around to maintain some kind of order in the code. And this maintenance needs to be active. In a perfect world, a human could just write agent instructions asking the agent to follow software engineering best practices to a T, and the agent could comply. In reality, I've found that even the most strongly worded instructions are often completely ignored or actively contradicted.
+
+My rule of thumb at this point is to give Copilot one or two attempts to solve a problem before stepping in and doing it manually. And this... pretty much works.
+
+I have a nearly fully-featured app up and running:
 
 <img src='/images/kitpicks-ss-12-30.png' alt="Kitpicks Design 12-30" width=1000px>
 
-and honestly the vast vast majority of its code was generated by Copilot (incrementally, under close supervision by me).
+and honestly the majority of its code was generated by Copilot (incrementally, under close supervision by me).
 
 [^1]: Minus the fully skeptical attitudes which say that AI is completely useless. I think that attitude is increasingly marginalized, and probably increasingly less credible, given how easy it is to make AI write code which, at least, does something interesting.
