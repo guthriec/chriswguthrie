@@ -4,8 +4,7 @@ date: 2025-12-30
 title:  "LLMs are Pretty Bad \"Teammates\""
 permalink: /hack-blog/still-need-swes/
 category: hack-blog
-header:
-  image: /images/kitpicks-ss-12-30.png
+image: kitpicks-ss-12-30.png
 ---
 
 I've gone back to [Kitpicks](https://kitpicks.com) work over winter break.
