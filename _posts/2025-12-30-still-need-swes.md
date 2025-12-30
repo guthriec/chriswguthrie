@@ -8,7 +8,7 @@ category: hack-blog
 
 I've gone back to [Kitpicks](https://kitpicks.com) work over winter break.
 
-The app is quasi-functional in that it will allow users to actually add RSS feeds and will fetch those feeds. But with the introduction of more complex logic, the app is starting to pick up a slight aroma of "legacy code." I found myself playing whack-a-mole with regressions and having to follow when debugging issues.
+The app is quasi-functional in that it will allow users to actually add RSS feeds and will fetch those feeds. But with the introduction of more complex logic, the app is starting to pick up a slight aroma of "legacy code." I found myself playing whack-a-mole with regressions and having to follow around some spaghetti strands when debugging issues.
 
 So, in the past few days, I've started getting a feel for real software engineering with AI, not just vibe-coding a user interface.
 
@@ -16,7 +16,7 @@ In these tasks, I've found Copilot to be sometimes magical and sometimes insanel
 
 I feel like I've seen a lot of takes in the past day or two expressing nearly the full spectrum of attitudes towards AI-assisted engineering[^1].
 
-On the front page of Hacker News alone, at this moment, there's a [blog post](https://news.ycombinator.com/item?id=46424233) which argues that AI just can't really "think", and [another](https://news.ycombinator.com/item?id=46424200) which fully embraces AI but argues that traditional software engineering practices make it so you can run AI with almost no supervision. A couple days ago I saw on HN a [post](https://rishi.monster/posts/time-intelligence-economy-part-1-the-ai-noise/) which argued for the inevitability of slop and lack of rigor, and that we must "romanticize" this. Today, my Google Discover feed recommended me [a post summarizing an interview](https://thenewstack.io/martin-fowler-on-preparing-for-ais-nondeterministic-computing/) with Martin Fowler, which takes the middle ground and argues that AI is highly useful for both analyzing and generating code but can't be let loose unsupervised.
+On the front page of Hacker News alone, at this moment, there's a [blog post](https://news.ycombinator.com/item?id=46424233) which argues that AI is doomed because it can't really "think", and [another](https://news.ycombinator.com/item?id=46424200) which fully embraces AI but argues that traditional software engineering practices make it so you can run AI with almost no supervision. A couple days ago I saw on HN a [post](https://rishi.monster/posts/time-intelligence-economy-part-1-the-ai-noise/) which argued for the inevitability of slop and lack of rigor, and that we must "romanticize" this. Today, my Google Discover feed recommended me [a post summarizing an interview](https://thenewstack.io/martin-fowler-on-preparing-for-ais-nondeterministic-computing/) with Martin Fowler, which takes the middle ground and argues that AI is highly useful for both analyzing and generating code but can't be let loose unsupervised.
 
 I'm not sure I have much to add to all this discourse, other than to throw a +1 in the direction of Mr. Fowler based on my experiences so far. AI does all kinds of crazy random stuff that absolutely degrade the codebase and cause regressions. Agent instructions help, but only a little bit. I've found that even the most strongly worded instructions are often ignored.
 
