@@ -15,8 +15,11 @@ layout: compress
 
     {% include browser-upgrade.html %}
     {% include masthead.html %}
+    {% include sidebar.html %}
 
-    {{ content }}
+    <turbo-frame id="page-content" data-turbo-action="advance">
+      {{ content }}
+    </turbo-frame>
 
     <div class="page__footer">
       <footer>

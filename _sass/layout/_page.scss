@@ -14,6 +14,29 @@
   @include breakpoint($x-large) {
     max-width: $x-large;
   }
+
+  @media screen and (min-width: $sidebar-screen-min-width) {
+    margin-left: $sidebar-link-max-width;
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width: $sidebar-screen-min-width) {
+  #main {
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: $x-large) {
+  #main {
+    max-width: $x-large;
+  }
+}
+
+@media screen and (min-width: $sidebar-screen-min-width) {
+  .cv-layout #main {
+    margin-left: auto !important;
+  }
 }
 
 .page {
@@ -21,6 +44,13 @@
     @include span(10 of 12 last);
     @include prefix(0.5 of 12);
     @include suffix(2 of 12);
+  }
+
+  @media screen and (min-width: $sidebar-screen-min-width) {
+    width: 100%;
+    float: none;
+    margin-left: 0;
+    padding-left: 1.5rem;
   }
 
   .page__inner-wrap {
@@ -386,6 +416,10 @@
 
   @include breakpoint($large) {
     @include pre(2.5 of 12);
+  }
+
+  @media screen and (min-width: $sidebar-screen-min-width) {
+    margin-left: 0;
   }
 
   a {

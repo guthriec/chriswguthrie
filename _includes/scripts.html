@@ -1,3 +1,20 @@
 <script type="module" src="{{ base_path }}/assets/js/main.min.js"></script>
 
+<script>
+	if (window.Turbo && typeof window.Turbo.start === "function") {
+		window.Turbo.start();
+	}
+
+	const siteTitle = "{{ site.title | escape }}";
+	const pageContentFrame = document.querySelector("#page-content");
+	if (pageContentFrame) {
+		pageContentFrame.addEventListener("turbo:frame-load", (event) => {
+			const pageTitle = event.target.querySelector("h1.page__title")?.textContent?.trim();
+			if (pageTitle) {
+				document.title = `${pageTitle} - ${siteTitle}`;
+			}
+		});
+	}
+</script>
+
 {% include analytics.html %}

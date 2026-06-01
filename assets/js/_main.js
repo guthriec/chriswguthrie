@@ -19,6 +19,10 @@ let determineComputedTheme = () => {
   return (userPref && userPref("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
 };
 
+if (window.Turbo && typeof window.Turbo.start === "function") {
+  window.Turbo.start();
+}
+
 // detect OS/browser preference
 const browserPref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
@@ -87,7 +91,7 @@ if (plotlyElements.length > 0) {
 
 $(document).ready(function () {
   // SCSS SETTINGS - These should be the same as the settings in the relevant files 
-  const scssLarge = 925;          // pixels, from /_sass/_themes.scss
+  const scssLarge = 1024;          // pixels, sidebar-screen-min-width
   const scssMastheadHeight = 70;  // pixels, from the current theme (e.g., /_sass/theme/_default.scss)
 
   // If the user hasn't chosen a theme, follow the OS preference when it changes
@@ -125,10 +129,12 @@ $(document).ready(function () {
     $(".author__urls-wrapper button").toggleClass("open");
   });
 
-  // Restore the follow menu if toggled on a window resize
-  jQuery(window).on('resize', function () {
-    if ($('.author__urls.social-icons').css('display') == 'none' && $(window).width() >= scssLarge) {
-      $(".author__urls").css('display', 'block')
+  // Collapse the follow menu when the viewport shrinks below the sidebar fixed breakpoint
+  // (CSS handles the initial state; this ensures the toggle state is reset on resize)
+  const staticBreakPoint = window.matchMedia(`(min-width: ${scssLarge}px)`);
+  staticBreakPoint.addListener(function (e) {
+    if (!e.matches) {
+      $(".author__urls").attr("style", "");
     }
   });
 

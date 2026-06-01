@@ -30,6 +30,12 @@
     padding: 0.5em 1em;
     font-family: $sans-serif-narrow;
 
+    @media screen and (min-width: $sidebar-screen-min-width) {
+      margin-left: 0;
+      padding: 0.5em 1em 0.5em 2rem;
+      max-width: none;
+    }
+
     @include breakpoint($x-large) {
       max-width: $x-large;
     }
