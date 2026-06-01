@@ -197,7 +197,7 @@
   cursor: default;
 
   @media screen and (max-width: ($sidebar-screen-min-width - 1px)) {
-    display: none !important;
+    display: none;
   }
 
   @media screen and (min-width: $sidebar-screen-min-width) {
