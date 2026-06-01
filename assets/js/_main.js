@@ -125,8 +125,7 @@ $(document).ready(function () {
 
   // Follow menu drop down
   $(".author__urls-wrapper button").on("click", function () {
-    $(".author__urls").fadeToggle("fast", function () { });
-    $(".author__urls-wrapper button").toggleClass("open");
+    $(".author__urls-wrapper").toggleClass("open");
   });
 
   // Collapse the follow menu when the viewport shrinks below the sidebar fixed breakpoint
