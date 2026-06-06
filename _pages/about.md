@@ -20,7 +20,7 @@ In general, I'm interested in algorithms which enable computational agents (robo
 ### Theory
 
 - Online learning and optimization (my Master's research is in this area)
-- How agents can correctly value information: bandits, active learning, etc.
+- How agents can correctly value information, in both statistical and adversarial contexts: bandits, active learning, etc.
 - Design of losses/rewards, and AI alignment
 - Search and planning algorithms in games and decision processes
 
