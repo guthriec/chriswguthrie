@@ -19,11 +19,12 @@ In general, I'm interested in algorithms which enable computational agents (robo
 
 ### Theory
 
-- Online learning and optimization
-- Interactive decision-making: bandits, active learning, and exploration algorithms
-- Search/planning algorithms in games and decision processes
+- Online learning and optimization (my Master's research is in this area)
+- How agents can correctly value information: bandits, active learning, etc.
+- Design of losses/rewards, and AI alignment
+- Search and planning algorithms in games and decision processes
 
 ### Practical Techniques
 
 - "Networks of agents" for heterogeneous systems and decentralized decision-making
-- Models, pretrained with self-supervision, as precursors to decision-making systems (e.g. using LLMs as foundation or embedding models, or fine-tuning LLMs for alignment and downstream tasks)
+- Models, pretrained with self-supervision, as precursors to decision-making systems (e.g. using LLMs as foundation or embedding models, or fine-tuning LLMs for downstream tasks)
