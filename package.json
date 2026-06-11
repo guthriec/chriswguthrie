@@ -37,9 +37,9 @@
     "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- npm run build:js",
     "build:js": "npm run uglify",
     "jekyll:build": "bundle exec jekyll build",
-    "jekyll:serve": "bundle exec jekyll serve",
+    "jekyll:serve": "bundle exec jekyll serve --config _config.yml,_config_dev.yml",
     "build": "npm run uglify && bundle exec jekyll build",
-    "serve": "npm run uglify && bundle exec jekyll serve",
-    "dev": "npm run uglify && bundle exec jekyll serve --livereload"
+    "serve": "npm run uglify && bundle exec jekyll serve --config _config.yml,_config_dev.yml",
+    "dev": "npm run uglify && bundle exec jekyll serve --livereload --config _config.yml,_config_dev.yml"
   }
 }
