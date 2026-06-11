@@ -5,7 +5,7 @@ permalink: /hack-blog/waterfall-of-slop/
 category: hack-blog
 ---
 
-Progress on both [Kitpicks](https://kitpicks.com) and my academic research work has slowed a bit in the past few months, in part due to (happy) distractions in my personal life. But also, both projects are in this kind of bogged-down phase of being probably not-quite-ready for publication. I don't have much control over that call on the research front, but at least with Kitpicks, the decision to release the app is fully in my court. And I think it's in a place where there are no glaring bugs, although there are some pretty key missing features, and quality for both UI design and for the recommendations is much lower than I'd like.
+Progress on both [Kitpicks](https://kitpicks.com) and my academic research work has slowed a bit in the past few months, in part due to (happy) distractions in my personal life. But also, both projects are in this kind of bogged-down phase of being not-quite-ready for publication. But at least with Kitpicks there's no real cost to shipping crap... And anyway, I think it's in a place where there are no glaring bugs, although there are some pretty key missing features, and quality for both UI design and for the recommendations is much lower than I'd like.
 
 Getting the app to a place of being a minimally decent proof-of-concept took some iterating, especially around app mechanics and information architecture. I like design, but I'm not a professional designer. I'm also probably too much of a "first principles" designer, in that, for example, I kind of had to reinvent the idea of bookmarks for myself to really be sure it was elegant and consistent with what I was going for.
 
