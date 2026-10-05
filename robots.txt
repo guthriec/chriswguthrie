@@ -1,3 +1,9 @@
 User-agent: *
 Allow: /
+
+# Unlisted drafts / private shares.
+# NOTE: robots.txt is advisory and only stops crawling, not access.
+# The noindex meta tag on the page itself is the stronger signal.
+Disallow: /files/drafts/
+
 Sitemap: https://chriswguthrie.com/sitemap.xml

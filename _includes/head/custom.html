@@ -2,6 +2,11 @@
 
 <!-- start custom head snippets -->
 
+<!-- Keep unlisted / draft pages out of search indexes. Set `noindex: true` in a page's front matter. -->
+{% if page.noindex %}
+<meta name="robots" content="noindex, nofollow">
+{% endif %}
+
 <!-- Support for Academicons -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
 
