@@ -2,7 +2,7 @@
 title: "Thesis Draft"
 draft_title: "Direct Stochastic-Adversarial Equivalences in Online Learning"
 draft_version: "2026-10-05"
-permalink: /draft/
+permalink: /drafts/thesis_draft/
 layout: single
 author_profile: false
 share: false
@@ -30,7 +30,7 @@ To use this page:
   3. Optionally add to this page's front matter:
          draft_title: "Your Actual Title"
          draft_version: "2026-10-05"
-  4. Share only this page's URL: https://chriswguthrie.com/draft/
+  4. Share only this page's URL: https://chriswguthrie.com/drafts/thesis_draft/
      It is intentionally NOT listed in _data/navigation.yml, so it won't
      appear in the site header, homepage, or sitemap.
 

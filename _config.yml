@@ -287,6 +287,12 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+  # Unlisted working papers / private shares.
+  # jekyll-sitemap indexes .pdf static files, so exclude this folder explicitly.
+  - scope:
+      path: "files/drafts"
+    values:
+      sitemap: false
 
 
 # Sass/SCSS
