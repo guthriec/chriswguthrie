@@ -288,9 +288,14 @@ defaults:
       author_profile: true
       share: true
   # Unlisted working papers / private shares.
-  # jekyll-sitemap indexes .pdf static files, so exclude this folder explicitly.
+  # jekyll-sitemap indexes .pdf static files, so exclude these paths explicitly.
   - scope:
       path: "files/drafts"
+    values:
+      sitemap: false
+  # Short alias path for the thesis draft (symlink to files/drafts/thesis-draft.pdf).
+  - scope:
+      path: "files/thesis-draft.pdf"
     values:
       sitemap: false
 

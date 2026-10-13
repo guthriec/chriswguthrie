@@ -20,13 +20,15 @@ noindex: true    # emits <meta name="robots" content="noindex, nofollow">
 **Version:** {{ page.draft_version | default: "YYYY-MM-DD" }}
 **Contact:** guthriec93@gmail.com
 
-[Download the draft (PDF)](/files/drafts/thesis-draft.pdf)
+[Download the draft (PDF)](/files/thesis-draft.pdf)
 
 <!--
 To use this page:
   1. Save the PDF as files/drafts/<your-filename>.pdf
      (the /files/drafts/ folder is excluded from search crawling in robots.txt)
   2. Update the link above to match that filename.
+     The link uses the short alias files/thesis-draft.pdf, a symlink to
+     files/drafts/thesis-draft.pdf; recreate the symlink if you rename the file.
   3. Optionally add to this page's front matter:
          draft_title: "Your Actual Title"
          draft_version: "2026-10-05"
