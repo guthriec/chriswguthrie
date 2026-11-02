@@ -81,6 +81,8 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
+  theses:
+    title: 'Theses'
   books:
     title: 'Books'
   manuscripts:
@@ -221,9 +223,9 @@ collections:
   # teaching:
   #   output: true
   #   permalink: /:collection/:path/
-  # publications:
-  #   output: true
-  #   permalink: /:collection/:path/
+  publications:
+    output: true
+    permalink: /:collection/:path/
   # portfolio:
   #   output: true
   #   permalink: /:collection/:path/

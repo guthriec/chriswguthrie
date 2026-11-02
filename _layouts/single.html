@@ -17,7 +17,7 @@ layout: default
 <div id="main" role="main">
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
       {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-      {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+      {% if page.excerpt and page.excerpt != empty %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
       {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
       {% if page.modified %}<meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">{% endif %}
 
@@ -34,11 +34,16 @@ layout: default
           
           {% if page.collection == 'teaching' %}
             <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
+          {% elsif page.collection == 'publications' and page.category == 'theses' and page.venue and page.date %}
+            <p>{{ page.venue }}, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
           {% elsif page.venue and page.date %}
             <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
           {% elsif page.date %}
             <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
-          {% endif %}    
+          {% endif %}
+          {% if page.paperurl %}
+            <p><a class="btn btn--large" href="{{ page.paperurl }}"><i class="fa fa-download" aria-hidden="true"></i> Download {{ page.paper_label | default: "Paper" }}</a></p>
+          {% endif %}
           </header>
         {% endunless %}
 
@@ -46,13 +51,13 @@ layout: default
           {{ content }}
 
           {% if page.citation and page.paperurl and page.slidesurl and page.bibtexurl %}
-            <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
+            <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download {{ page.paper_label | default: "Paper" }}</a> | <a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
           {% elsif page.citation and page.paperurl and page.slidesurl %}
-            <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a></p>
+            <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download {{ page.paper_label | default: "Paper" }}</a> | <a href="{{ page.slidesurl }}">Download Slides</a></p>
           {% elsif page.citation and page.paperurl and page.bibtexurl %}
-            <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
+            <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download {{ page.paper_label | default: "Paper" }}</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
           {% elsif page.citation and page.paperurl %}
-            <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a></p>
+            <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download {{ page.paper_label | default: "Paper" }}</a></p>
           {% elsif page.citation and page.slidesurl and page.bibtexurl %}
             <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
           {% elsif page.citation and page.slidesurl %}
@@ -60,7 +65,7 @@ layout: default
           {% elsif page.slidesurl and page.bibtexurl %}
             <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
           {% elsif page.paperurl and page.bibtexurl %}
-            <p style="font-size: smaller"><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
+            <p style="font-size: smaller"><a href="{{ page.paperurl }}">Download {{ page.paper_label | default: "Paper" }}</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
           {% elsif page.citation and page.bibtexurl %}
             <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
           {% elsif page.citation %}
